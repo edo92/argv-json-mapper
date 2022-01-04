@@ -1,0 +1,34 @@
+{
+  "version": "0.0.2",
+  "main": "dist/index.js",
+  "name": "argv-json-mapper",
+  "files": [
+    "dist",
+    "package.json",
+    "README.md"
+  ],
+  "devDependencies": {
+    "jest": "^27.4.5",
+    "ts-node": "^10.4.0",
+    "ts-jest": "^27.1.2",
+    "typescript": "^4.5.4",
+    "@types/jest": "^27.4.0",
+    "@types/node": "^17.0.6"
+  },
+  "scripts": {
+    "build": "tsc",
+    "prepare": "npm run build",
+    "test": "bash ./scripts/testenv.sh",
+    "test:docker": "jest --config ./jest.config.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:edo92/argv-json-mapper"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "description": "argv-json-mapper",
+  "author": "Eduard Jacobs",
+  "license": "MIT"
+}
