@@ -18,8 +18,8 @@
   "scripts": {
     "build": "tsc",
     "prepare": "npm run build",
-    "test": "bash ./scripts/testenv.sh",
-    "test:docker": "jest --config ./jest.config.json"
+    "test:docker": "bash ./scripts/testenv.sh",
+    "test": "jest --config ./jest.config.json"
   },
   "repository": {
     "type": "git",

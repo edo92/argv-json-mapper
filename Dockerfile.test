@@ -1,0 +1,21 @@
+# Builder
+FROM node:16.13.0 as builder
+RUN echo ls
+WORKDIR /app
+
+COPY . ./
+RUN npm install
+RUN npm run build
+
+# Test Environment
+FROM node:16.13.0
+
+COPY jest.config.json ./
+COPY tsconfig.json ./
+COPY package.json ./
+COPY tests ./
+
+COPY --from=builder /app/dist ./dist
+RUN npm install
+
+CMD ["npm", "run", "test"]
